@@ -1,5 +1,7 @@
 package no.hvl.dat100.jplab11.oppgave3;
 
+import java.util.regex.Pattern;
+
 import no.hvl.dat100.jplab11.common.TODO;
 import no.hvl.dat100.jplab11.oppgave1.*;
 
@@ -112,8 +114,19 @@ public class Blogg {
 	}
 	
 	public int[] search(String keyword) {
+		int[] ids = new int[lengde];
+		int counter = 0;
+		String regex = String.format("(?si).*\\Q%s\\E.*", keyword);
 		
-		throw new UnsupportedOperationException(TODO.method());
-
+		for(Innlegg innlegg : this.samling) {
+			String s = innlegg.toString();
+			
+			if(s.matches(regex)) {
+				ids[counter] = innlegg.getId();
+				counter++;
+			}
+		}
+		
+		return ids;
 	}
 }

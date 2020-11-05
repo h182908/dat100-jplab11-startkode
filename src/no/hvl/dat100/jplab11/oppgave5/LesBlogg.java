@@ -21,6 +21,13 @@ public class LesBlogg {
 	private static String BILDE = "BILDE";
 
 	public static Blogg les(String mappe, String filnavn) {
+		
+		String file_name = filnavn;
+		try {
+			FileReader reader = new FileReader(file_name);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 
 		throw new UnsupportedOperationException(TODO.method());
 
