@@ -7,7 +7,7 @@ public class Tekst extends Innlegg {
 
 	public String tekst;
 	
-	public Tekst () {
+	public Tekst() {
 		
 	}
 	

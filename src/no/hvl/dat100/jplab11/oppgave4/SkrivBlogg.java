@@ -14,13 +14,12 @@ public class SkrivBlogg {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(file_name);
+			writer.print(samling.toString());
+			writer.close();
+			
+			return true;
 		} catch (FileNotFoundException e) {
 			return false;
 		}
-		
-		writer.print(samling.toString());
-		writer.close();
-
-		return true;
 	}
 }
